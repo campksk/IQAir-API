@@ -1,5 +1,4 @@
 import requests
-import json
 
 key = "API-KEY"
 lat = "13.115039"
