@@ -1,10 +1,23 @@
 import requests
+import json
 
-key = "483a1f6e-0d6b-4e06-9e5d-56848b7ee555"
+key = "API-KEY"
 lat = "13.115039"
 lon = "99.939195"
 url = "https://api.airvisual.com/v2/nearest_city?lat=" + lat + "&lon=" + lon + "&key=" + key
 
-print(url)
-response = requests.get(url)
-print(response.json())
+data = requests.get(url).json()
+
+pollution = data['data']['current']['pollution']
+
+ts = pollution['ts']
+aqius = pollution['aqius']
+mainus = pollution['mainus']
+aqicn = pollution['aqicn']
+maincn = pollution['maincn']
+
+print(ts)
+print(aqius)
+print(mainus)
+print(aqicn)
+print(maincn)
